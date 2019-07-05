@@ -1,0 +1,47 @@
+{% for note in notes %}
+  <div class="card border-primary mb-3" id="note{{note.id}}">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active"  role="tab" data-toggle="tab" href="#ques{{note.id}}">Title</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  role="tab" data-toggle="tab" href="#ans{{note.id}}">Detail</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" role="tab" data-toggle="tab" href="#res{{note.id}}">Resources</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link update-note" role="tab" data-toggle="tab" href="#update{{note.id}}" data-id="{{note.id}}">Update</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link delete-note" role="tab" data-toggle="tab" href="#delete{{note.id}}" data-id="{{note.id}}">Delete</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" role="tab" data-toggle="tab" href="#view{{note.id}}">View</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="collapse{{note.id}}" class="collapse show" aria-labelledby="heading{{note.id}}" data-parent="#accordion">
+    <div class="card-body tab-content">
+            <div class="tab-pane fade show active" role="tabpanel" id="ques{{note.id}}">
+            <p class="card-text" id="ques-{{note.id}}">{{note.ques}}</p>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="ans{{note.id}}">
+            <p class="card-text"  id="ans-{{note.id}}">{{note.ans}}</p>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="res{{note.id}}">
+                    <span class="fa fa-link" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="link ref">
+                      </span><span  id="link-{{note.id}}">{{note.link}}</span><br/>
+                      <span class="fa fa-file" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="additional files">
+                      </span><span  id="doc-{{note.id}}">{{note.doc}}</span><br/>
+                      <span class="fa fa-file" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="additional files">
+                      </span><span  id="category-{{note.id}}">{{note.category}}</span>
+                  </div>
+    </div>
+  </div>
+  </div>
+{% empty %}
+  <h1>No New note today</h1>
+{% endfor %}

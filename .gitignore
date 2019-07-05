@@ -1,0 +1,8 @@
+# Visual code editor
+.vscode
+
+# django project folder/settings
+enotes
+
+# cache
+notes/__pycache__
