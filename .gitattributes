@@ -10,7 +10,7 @@
 *.gitattributes text
 .gitignore      text
 *.md            text
-
+*.html          html
 #
 # Exclude files from exporting
 #
